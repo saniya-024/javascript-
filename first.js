@@ -4,3 +4,5 @@ fullName="Tony";
 console.log(fullName);
 x=null;
 console.log(x);
+isFollow=true;
+console.log(isFollow);
