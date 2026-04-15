@@ -7,3 +7,4 @@ const student = {
     isPass:true,
 };
 console.log(student["age"]);
+console.log(student.cgpa);
