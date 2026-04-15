@@ -6,3 +6,4 @@ x=null;
 console.log(x);
 isFollow=true;
 console.log(isFollow);
+let age = 24;
