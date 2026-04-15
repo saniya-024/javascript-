@@ -6,3 +6,4 @@ const student = {
     cgpa:8,
     isPass:true,
 };
+console.log(student["age"]);
