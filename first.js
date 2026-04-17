@@ -1,4 +1,10 @@
-//ternery operator
-let age = 25;
-let result = age >= 18 ? "adult" : "not adult";
-console.log (result);
+//questionssss//
+let name="Sana";
+console.log(name);
+
+
+let age=25;
+console.log(age);
+
+const country="India";
+console.log(country);
