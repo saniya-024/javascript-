@@ -4,3 +4,6 @@ console.log("a+b=",a=b);
 //unary operator
 a=a+1;
 console.log("a=",a);
+//assignment operators
+a+=5;
+console.log("a=",a);
