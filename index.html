@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html> 
 <html lang="en">
 
 <head>
@@ -18,5 +18,164 @@
 
 </body>
 <script src="first.js"></script>
+
+<!-- </html> -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Student Form</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background-color: #f5f5f5;
+        }
+
+        .container {
+            width: 400px;
+            margin: 40px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px gray;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        input, select {
+            padding: 8px;
+            margin-top: 5px;
+        }
+
+        button {
+            margin-top: 15px;
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        table {
+            width: 80%;
+            margin: 30px auto;
+            border-collapse: collapse;
+            background: white;
+        }
+
+        th, td {
+            border: 1px solid black;
+            padding: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Add Student</h1>
+
+        
+        <form onsubmit="addStudent(event)">
+            
+            <label for="name">Student Name:</label>
+            <input type="text" id="name" required>
+
+            <label for="age">Age:</label>
+            <input type="number" id="age" required>
+
+            <label for="graduation">Graduation Status:</label>
+            <select id="graduation">
+                <option value="Yes">Graduated</option>
+                <option value="No">Not Graduated</option>
+            </select>
+
+            <button type="submit">Add Student</button>
+        </form>
+    </div>
+
+   
+   
+    <!-- Table -->
+
+
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Graduation</th>
+                <th>Job Eligibility</th>
+            </tr>
+        </thead>
+        <tbody id="tableBody"></tbody>
+    </table>
+
+    <script>
+        function addStudent(event) {
+
+            // prevent page reload
+            // event.preventDefault();
+
+            // Variables
+            let name = document.getElementById("name").value;
+            let age = Number(document.getElementById("age").value);
+            let graduation = document.getElementById("graduation").value;
+
+            // typeof
+            console.log(typeof name, typeof age, typeof graduation);
+
+            // Ternary
+            let category = (age >= 18) ? "Adult" : "Minor";
+            console.log(name + " is " + category);
+
+            // Conditions
+            let eligibility;
+
+            if (age >= 18 && graduation === "Yes") {
+                eligibility = "Eligible";
+            } else if (age >= 18 && graduation === "No") {
+                eligibility = "Not Eligible (No Degree)";
+            } else {
+                eligibility = "Not Eligible (Under Age)";
+            }
+
+            // Add row
+            let table = document.getElementById("tableBody");
+
+            let row = `
+                <tr>
+                    <td>${name}</td>
+                    <td>${age}</td>
+                    <td>${graduation}</td>
+                    <td>${eligibility}</td>
+                </tr>
+            `;
+
+            table.innerHTML += row;
+
+            // Loop
+            for (let i = 1; i <= 2; i++) {
+                console.log("Loop:", i);
+            }
+
+            // Clear form
+            document.querySelector("form").reset();
+        }
+    </script>
+
+</body>
 
 </html>

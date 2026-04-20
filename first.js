@@ -23,3 +23,4 @@ const name="Sana";
 console.log("Before:",name);
  const name= "riya";
  console.log("after;",name);
+ 
