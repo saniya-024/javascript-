@@ -1,4 +1,4 @@
-//questionssss  of variables
+// questionssss  of variables
 // // let name="Sana";
 // // console.log(name);
 
